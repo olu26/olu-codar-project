@@ -52,22 +52,41 @@ const Blog = () => {
   return (
     <div className="font-sans">
       {/* Hero Section */}
-      <div className="flex h-[65vh] bg-[#1f0101]">
-        <div className="w-full flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white">Blog Detail</h1>
+        <div className="relative min-h-[60vh] bg-[#1f0101]">
+      <div className="h-[60vh] flex flex-col md:flex-row items-center">
+        {/* Left Section: Text Content */}
+        <div className="w-full md:w-1/2 px-6 md:pl-20 py-10 md:py-20 text-center md:text-left">
+          <div className="text-red-600 w-12 h-12 mb-8 mx-auto md:mx-0">
+            <svg
+              id="scissors"
+              xmlns="http://www.w3.org/2000/svg"
+              width="48.809"
+              height="48.809"
+              viewBox="0 0 48.809 48.809"
+            >
+              {/* Scissors SVG Path */}
+            </svg>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            BLOG DETAILS
+          </h1>
         </div>
-        <div className="w-full h-full relative">
+    
+        {/* Right Section: Image (Hidden on Mobile) */}
+        <div className="hidden md:block w-full md:w-1/2 h-full relative">
           <img
             src={hero}
-            alt="Blog Hero"
-            className="h-full w-full object-cover"
+            alt="Barber hero"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>
+    </div>
 
-      <div className="container mx-auto px-4 py-8 flex gap-10">
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-6">
         {/* Main Blog Section */}
-        <div className="w-2/3">
+        <div className="w-full md:w-2/3">
           <img src={barber1} alt="Blog Post" className="w-full rounded-lg" />
           <h1 className="text-2xl font-bold my-4">
             Second divided from form fish beast made every of seas all gathered
@@ -118,9 +137,9 @@ const Blog = () => {
         </div>
 
         {/* Sidebar Section */}
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3 space-y-6">
           {/* Search */}
-          <div className="mb-6">
+          <div>
             <input
               type="text"
               placeholder="Search Keyword"
@@ -132,7 +151,7 @@ const Blog = () => {
           </div>
 
           {/* Categories */}
-          <div className="mb-6">
+          <div>
             <h2 className="text-lg font-semibold mb-2">Category</h2>
             <ul className="text-gray-700 space-y-1">
               {[
@@ -147,7 +166,7 @@ const Blog = () => {
           </div>
 
           {/* Recent Posts */}
-          <div className="p-4 bg-white shadow-lg rounded-lg w-72">
+          <div className="bg-white p-4 shadow-md rounded-lg">
             <h2 className="text-lg font-semibold mb-3 border-b pb-2">
               Recent Post
             </h2>
@@ -194,8 +213,7 @@ const Blog = () => {
             </div>
           </div>
 
-          {/* insta feed */}
-
+          {/* Instagram Feeds */}
           <div className="bg-white p-4 shadow-md rounded-lg">
             <h2 className="text-lg font-semibold mt-6 mb-3 border-b pb-2">
               Instagram Feeds
@@ -206,11 +224,12 @@ const Blog = () => {
                   key={index}
                   src={image}
                   alt={`Instagram feed ${index + 1}`}
-                  className="w-20 h-20 object-cover rounded-lg"
+                  className="w-full h-20 object-cover rounded-lg"
                 />
               ))}
             </div>
           </div>
+
           {/* Newsletter */}
           <div>
             <h2 className="text-lg font-semibold mb-2">Newsletter</h2>

@@ -43,22 +43,36 @@ export default function Gallery() {
 
   return (
     <main className="font-sans">
-      {/* Hero Section */}
-      <div className="flex h-[65vh] bg-[#1f0101]">
-        {/* Left Section: Gallery Text */}
-        <div className="w-full flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-white">Gallery</h1>
-        </div>
-
-        {/* Right Section: Image */}
-        <div className="w-full h-full relative">
-          <img
-            src={hero} // Make sure the path is correct
-            alt="Gallery Hero"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      </div>
+         <div className="relative min-h-[60vh] bg-[#1f0101]">
+       <div className="h-[60vh] flex flex-col md:flex-row items-center">
+         {/* Left Section: Text Content */}
+         <div className="w-full md:w-1/2 px-6 md:pl-20 py-10 md:py-20 text-center md:text-left">
+           <div className="text-red-600 w-12 h-12 mb-8 mx-auto md:mx-0">
+             <svg
+               id="scissors"
+               xmlns="http://www.w3.org/2000/svg"
+               width="48.809"
+               height="48.809"
+               viewBox="0 0 48.809 48.809"
+             >
+               {/* Scissors SVG Path */}
+             </svg>
+           </div>
+           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+             GALLERY
+           </h1>
+         </div>
+     
+         {/* Right Section: Image (Hidden on Mobile) */}
+         <div className="hidden md:block w-full md:w-1/2 h-full relative">
+           <img
+             src={hero}
+             alt="Barber hero"
+             className="w-full h-full object-cover"
+           />
+         </div>
+       </div>
+     </div>
 
       {/* Gallery Section */}
       <div className="py-20">
