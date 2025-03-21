@@ -2,6 +2,8 @@ import about1 from "../assets/img/gallery/about1.jpg";
 import hero from "../assets/img/hero/hero1.jpg";
 import barberImage from "../assets/img/gallery/about2.jpg";
 import { useState } from "react";
+import testimonials from "../../src/../data";
+
 
 const About = () => {
   const aboutPoints = [
@@ -182,49 +184,36 @@ const About = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
-            Customers Say About Us
+      <section className="py-12 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
+            CUSTOMERS SAY ABOUT US
           </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "Wilma Mumduya",
-              quote:
-                "Consectetur adipiscing elit, sed do eiusmod tempor dunt ulter labore et dolore magna.",
-            },
-            {
-              name: "Jimmy Changa",
-              quote:
-                "Consectetur adipiscing elit, sed do eiusmod tempor dunt ulter labore et dolore magna.",
-            },
-            {
-              name: "Jane Doe",
-              quote:
-                "Consectetur adipiscing elit, sed do eiusmod tempor dunt ulter labore et dolore magna.",
-            },
-          ].map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md text-center"
-            >
-              <div className="flex justify-center text-yellow-500 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    className="w-5 h-5 fill-current"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="p-6 bg-white shadow-lg rounded-lg">
+                {/* Star Ratings */}
+                <div className="flex mb-4 text-red-600">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="mb-6 text-gray-700">{testimonial.text}</p>
+
+                {/* Client Info */}
+                <div className="flex items-center gap-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border border-gray-300"
+                  />
+                  <p className="font-medium">{testimonial.name}</p>
+                </div>
               </div>
-              <p className="italic text-gray-600 mb-4">{testimonial.quote}</p>
-              <div className="font-semibold text-gray-800">{testimonial.name}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>

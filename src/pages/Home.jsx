@@ -13,6 +13,7 @@ import sectionBg from '../assets/img/gallery/section-bg.jpg';
 import "swiper/css";
 import "swiper/css/pagination";
 import { allimages } from "../../data";
+import testimonials from "../../src/../data";
 
 const Home = () => {
   const aboutPoints = [
@@ -57,20 +58,7 @@ const Home = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Wilma Mumduya",
-      text: "Consectetur adipiscing elit, sed do eiusmod tempor...",
-    },
-    {
-      name: "Jimmy Changa",
-      text: "Consectetur adipiscing elit, sed do eiusmod tempor...",
-    },
-    {
-      name: "Wilma Mumduya",
-      text: "Consectetur adipiscing elit, sed do eiusmod tempor...",
-    },
-  ];
+  
 
   return (
     <main className="bg-white">
@@ -333,13 +321,13 @@ const Home = () => {
 
       {/* Testimonials */}
       <section className="py-12 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
             CUSTOMERS SAY ABOUT US
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonials, index) => (
-              <div key={index} className="p-8 bg-white shadow-lg rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="p-6 bg-white shadow-lg rounded-lg">
                 {/* Star Ratings */}
                 <div className="flex mb-4 text-red-600">
                   {[...Array(5)].map((_, i) => (
@@ -348,16 +336,16 @@ const Home = () => {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="mb-8 text-gray-700">{testimonials.text}</p>
+                <p className="mb-6 text-gray-700">{testimonial.text}</p>
 
                 {/* Client Info */}
                 <div className="flex items-center gap-4">
                   <img
-                    src={testimonials.image}
-                    alt={testimonials.name}
+                    src={testimonial.image}
+                    alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover border border-gray-300"
                   />
-                  <p className="font-medium">{testimonials.name}</p>
+                  <p className="font-medium">{testimonial.name}</p>
                 </div>
               </div>
             ))}
