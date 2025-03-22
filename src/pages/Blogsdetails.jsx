@@ -12,7 +12,7 @@ import feed4 from "../assets/img/post/post_4.jpg";
 import feed5 from "../assets/img/post/post_4.jpg";
 import feed6 from "../assets/img/post/post_4.jpg";
 
-const Blog = () => {
+const Blogsdetails = () => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
@@ -248,4 +248,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogsdetails;
